@@ -64,3 +64,55 @@ High-Level Architecture
 | API layer        | REST                      |
 | Storage          | PostgreSQL                |
 | Containerization | Docker                    |
+
+
+GitHub Repository Structure
+java-rag-chewy-chatbot
+│
+├── README.md
+├── docker-compose.yml
+├── .env.example
+│
+├── crawler-service
+│   ├── src/main/java
+│   │   └── crawler
+│   │       ├── ChewyScraper.java
+│   │       ├── HtmlParser.java
+│   │       └── CrawlScheduler.java
+│   └── Dockerfile
+│
+├── ingestion-service
+│   ├── src/main/java
+│   │   └── ingestion
+│   │       ├── DocumentChunker.java
+│   │       ├── MetadataExtractor.java
+│   │       └── IngestionPipeline.java
+│   └── Dockerfile
+│
+├── embedding-service
+│   ├── src/main/java
+│   │   └── embeddings
+│   │       ├── EmbeddingGenerator.java
+│   │       ├── VectorStoreService.java
+│   │       └── QdrantClient.java
+│   └── Dockerfile
+│
+├── rag-service
+│   ├── src/main/java
+│   │   └── rag
+│   │       ├── RetrieverService.java
+│   │       ├── PromptBuilder.java
+│   │       ├── ContextAssembler.java
+│   │       └── RAGPipeline.java
+│   └── Dockerfile
+│
+├── chat-api
+│   ├── src/main/java
+│   │   └── api
+│   │       ├── ChatController.java
+│   │       ├── ChatService.java
+│   │       └── ChatRequest.java
+│   └── Dockerfile
+│
+└── ui
+    └── react-chat-ui
